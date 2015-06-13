@@ -29,14 +29,14 @@ have done to the document.
 The `render` function is called (and profiled) with a fresh set of data every
 frame.
 
-Writing an adapter is really easy, just take a look at `dom.js`, which
+Writing an adapter is really easy, just take a look at `adapters/dom.js`, which
 implements dbmonster in pure DOM.
 
 ## helpers
 
 To ease some of the boilerplate of writing an adapter, a global `Helpers`
-object is provided with the following signature. Take a look at `dom.js` for
-a usage example.
+object is provided with the following signature. Take a look at
+`adapters/dom.js` for a usage example.
 ```js
 Helpers: {
   countClassName: (count: Number) => String,
