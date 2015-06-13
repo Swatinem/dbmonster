@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="./styles.css" rel="stylesheet" type="text/css" />
+<meta charset="utf-8" />
+<title>dbmon</title>
+</head>
+<body>
+  <div id="link">
+    <p>You're looking at <a href="http://github.com/Swatinem/dbmonster">DBMonster</a></p>
+    <p>
+      Currently rendered by <strong id="renderedby">NOTHING :-(</strong><br />
+      with <strong id="frametime">0.0</strong>ms avg script time / frame
+      <button id="toggle">un/pause</button>
+    </p>
+    <p>
+      Start it with this adapter:
+      <form id="start">
+        <input name="url" type="url" placeholder="https://…" />
+        <input type="submit" />
+      </form>
+    </p>
+    <p>
+      Or you can try one of these:
+      <ul id="adapters">
+        <li><a href="./dom.js">pure DOM</a></li>
+      </ul>
+    </p>
+  </div>
+  <div id="app"></div>
+  <script src="./dbmon.js"></script>
+  <script>start();</script>
+</body>
+</html>
