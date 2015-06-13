@@ -37,7 +37,7 @@ function register(adapter) {
 
 function Runner(num) {
   this.num = num;
-  this.perf = new Perf(10, document.querySelector('#frametime'));
+  this.perf = new Perf(30, document.querySelector('#frametime'));
   this.runnerEl = document.querySelector('#renderedby');
   this.appEl = document.querySelector('#app');
   this.adapter = null;
@@ -52,7 +52,7 @@ Runner.prototype.startWith = function (adapter) {
   }
   this.adapter = adapter;
   adapter.init(generateData(this.num), this.appEl);
-  this.runnerEl.textContent = adapter.name + ' ' + adapter.version;
+  this.runnerEl.firstChild.data = adapter.name + ' ' + adapter.version;
   this.running = true;
   requestAnimationFrame(this.tick);
 };
@@ -97,7 +97,7 @@ Perf.prototype.render = function () {
   if (this.samples.length) {
     avg = avg / this.samples.length;
   }
-  this.elem.textContent = avg.toFixed(1);
+  this.elem.firstChild.data = avg.toFixed(1);
 };
 
 

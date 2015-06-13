@@ -52,16 +52,19 @@
     }
   }
   function fill(row, data) {
-    row.firstChild.textContent = data.name;
+    var n = row.firstChild;
+    n.firstChild.data = data.name;
     var sampleLength = Helpers.sampleLength(data);
-    row.childNodes[1].firstChild.className = Helpers.countClassName(sampleLength);
-    row.childNodes[1].firstChild.textContent = sampleLength;
+    n = n.nextSibling;
+    n.firstChild.className = Helpers.countClassName(sampleLength);
+    n.firstChild.firstChild.data = sampleLength;
     for (var i = 0; i < 5; i++) {
       var q = data.topFiveQueries[i];
-      var el = row.childNodes[i + 2];
-      el.className = Helpers.elapsedClassName(q.elapsed);
-      el.firstChild.data = Helpers.formatElapsed(q.elapsed);
-      el.childNodes[1].firstChild.textContent = q.query;
+      n = n.nextSibling;
+      n.className = Helpers.elapsedClassName(q.elapsed);
+      var n2 = n.firstChild;
+      n2.data = Helpers.formatElapsed(q.elapsed);
+      n2.nextSibling.firstChild.firstChild.data = q.query;
     }
   }
 })();
